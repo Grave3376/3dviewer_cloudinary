@@ -13,7 +13,7 @@ export default function App() {
       >
         <color attach="background" args={['#000000']} />
         {/* <Environment files="./models/env1.hdr" background /> */}
-        <Stage intensity={0.3} preset="portrait" adjustCamera={1} environment="city">
+        <Stage intensity={0.3} preset="soft" adjustCamera={1} environment="city">
           {/* Disable Shadows on the Model */}
           <Gltf 
             src="./models/iphone.glb" 
