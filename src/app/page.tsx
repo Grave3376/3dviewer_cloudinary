@@ -16,7 +16,7 @@ export default function App() {
         <Stage intensity={0.3} preset="soft" adjustCamera={1} environment="city">
           {/* Disable Shadows on the Model */}
           <Gltf 
-            src="./models/iphone.glb" 
+            src="./models/v3.glb" 
             castShadow={false} 
             receiveShadow={false} 
           />
