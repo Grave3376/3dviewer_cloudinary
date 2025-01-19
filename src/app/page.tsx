@@ -78,7 +78,7 @@ export default function App() {
         htmlFor="upload-button"
         style={{
           position: "absolute",
-          bottom: "20px", // Positioned at the bottom center
+          bottom: "5vh", // Positioned at the bottom center
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 10,
@@ -100,8 +100,8 @@ export default function App() {
       {/* Three.js Canvas */}
       <Canvas
         shadows
-        gl={{ antialias: false }}
-        dpr={[1, 1.5]}
+        gl={{ antialias: true }}
+        dpr={[1, 2]}
         camera={{ position: [4, -1, 8], fov: 35 }}
       >
         <color attach="background" args={["#000000"]} />
