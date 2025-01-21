@@ -1,11 +1,12 @@
 "use client";
+import { Suspense } from "react"; // Import Suspense from React
 import { useRouter, useSearchParams } from "next/navigation";
 import { Canvas } from "@react-three/fiber";
 import { Stage, OrbitControls, Gltf } from "@react-three/drei";
 
 export default function Viewer() {
-  const searchParams = useSearchParams(); // Fetch query parameters
-  const modelUrl = searchParams.get("modelUrl"); // Extract the modelUrl parameter
+  const searchParams = useSearchParams();
+  const modelUrl = searchParams.get("modelUrl");
   const router = useRouter();
 
   return (
@@ -30,28 +31,30 @@ export default function Viewer() {
         Back
       </button>
 
-      {/* Three.js Canvas */}
-      <Canvas
-        shadows
-        gl={{ antialias: true }}
-        dpr={[1, 2]}
-        camera={{ position: [4, -1, 8], fov: 35 }}
-      >
-        <color attach="background" args={["#000000"]} />
-        <Stage intensity={0.3} preset="soft" adjustCamera={1} environment="city">
-          {/* Render the model from the query parameter */}
-          {modelUrl && <Gltf src={modelUrl} />}
-        </Stage>
+      {/* Suspense Boundary */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <Canvas
+          shadows
+          gl={{ antialias: true }}
+          dpr={[1, 2]}
+          camera={{ position: [4, -1, 8], fov: 35 }}
+        >
+          <color attach="background" args={["#000000"]} />
+          <Stage intensity={0.3} preset="soft" adjustCamera={1} environment="city">
+            {/* Render the model from the query parameter */}
+            {modelUrl && <Gltf src={modelUrl} />}
+          </Stage>
 
-        {/* OrbitControls */}
-        <OrbitControls
-          minPolarAngle={0}
-          maxPolarAngle={Math.PI}
-          enableZoom={true}
-          enablePan={true}
-          enableRotate={true}
-        />
-      </Canvas>
+          {/* OrbitControls */}
+          <OrbitControls
+            minPolarAngle={0}
+            maxPolarAngle={Math.PI}
+            enableZoom={true}
+            enablePan={true}
+            enableRotate={true}
+          />
+        </Canvas>
+      </Suspense>
     </div>
   );
 }
