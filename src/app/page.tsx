@@ -1,125 +1,123 @@
-// "use client";
-// import { Canvas } from "@react-three/fiber";
-// import { Stage, OrbitControls, Gltf, Environment } from "@react-three/drei";
-
-// export default function App() {
-//   return (
-//     <div style={{ width: '100%', height: '100vh' }}>
-//       <Canvas
-//         shadows
-//         gl={{ antialias: false }}
-//         dpr={[1, 1.5]}
-//         camera={{ position: [4, -1, 8], fov: 35 }}
-//       >
-//         <color attach="background" args={['#000000']} />
-//         {/* <Environment files="./models/env1.hdr" background /> */}
-//         <Stage intensity={0.3} preset="soft" adjustCamera={1} environment="city">
-//           {/* Disable Shadows on the Model */}
-//           <Gltf 
-//             src="./models/v3.glb" 
-//             castShadow={false} 
-//             receiveShadow={false} 
-//           />
-//         </Stage>
-
-//         {/* OrbitControls */}
-//         <OrbitControls
-//           minPolarAngle={0}  // Allow looking from the top
-//           maxPolarAngle={Math.PI}  // Allow looking from the bottom
-//           enableZoom={true}  // Optional, allow zooming in and out
-//           enablePan={true}   // Optional, allow panning
-//           enableRotate={true} // Enable rotation
-//         />
-//       </Canvas>
-//     </div>
-//   );
-// }
-
-
-
-
 "use client";
-import { Canvas } from "@react-three/fiber";
-import { Stage, OrbitControls, Gltf } from "@react-three/drei";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export default function App() {
-  const [modelPath, setModelPath] = useState<string>("/models/iphone.glb"); // Default iPhone model
+const products = [
+  {
+    id: 1,
+    name: "iPhone 15 Pro Max",
+    image: "./models/15promax.JPEG",
+    modelUrl:
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1737463586/vtmp086htkfx16tzdxy6.glb",
+  },
+  {
+    id: 2,
+    name: "Airpods",
+    image: "./models/airpods.JPG",
+    modelUrl:
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1737466206/v3_qdyb3p.glb",
+  },
+  {
+    id: 3,
+    name: "Macbook",
+    image: "./models/macbook.JPG",
+    modelUrl:
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1737464229/v1testing_bp4pvt.glb",
+  },
+];
 
-  // Function to handle file upload
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const url = URL.createObjectURL(file); // Create a temporary URL for the file
-      setModelPath(url); // Set the model path to state
-    }
-  };
-
-  // Clean up the temporary file URL
-  useEffect(() => {
-    return () => {
-      if (modelPath && modelPath.startsWith("blob:")) {
-        URL.revokeObjectURL(modelPath);
-      }
-    };
-  }, [modelPath]);
+export default function ProductList() {
+  const router = useRouter(); // Initialize useRouter for navigation
 
   return (
-    <div style={{ width: "100%", height: "100vh", position: "relative" }}>
-      {/* Upload Button */}
-      <input
-        type="file"
-        accept=".glb,.gltf"
-        onChange={handleFileUpload}
-        id="upload-button"
-        style={{ display: "none" }}
-      />
-      <label
-        htmlFor="upload-button"
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "100vh",
+        padding: "20px",
+        backgroundColor: "#000000",
+      }}
+    >
+      <div
         style={{
-          position: "absolute",
-          bottom: "5vh", // Positioned at the bottom center
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 10,
-          background: "blue",
-          backgroundSize: "400% 400%",
-          color: "#fff",
-          padding: "12px 24px",
-          borderRadius: "8px",
-          border: "none",
-          cursor: "pointer",
-          fontSize: "16px",
-          fontWeight: "bold",
-          animation: "gradient 3s infinite",
+          display: "flex",
+          gap: "20px",
+          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
-        Upload 3D Model
-      </label>
-
-      {/* Three.js Canvas */}
-      <Canvas
-        shadows
-        gl={{ antialias: true }}
-        dpr={[1, 2]}
-        camera={{ position: [4, -1, 8], fov: 35 }}
-      >
-        <color attach="background" args={["#000000"]} />
-        <Stage intensity={0.3} preset="soft" adjustCamera={1} environment="city">
-          {/* Render the default or uploaded model */}
-          {modelPath && <Gltf src={modelPath} />}
-        </Stage>
-
-        {/* OrbitControls */}
-        <OrbitControls
-          minPolarAngle={0} // Allow looking from the top
-          maxPolarAngle={Math.PI} // Allow looking from the bottom
-          enableZoom={true} // Allow zooming in and out
-          enablePan={true} // Allow panning
-          enableRotate={true} // Enable rotation
-        />
-      </Canvas>
+        {products.map((product) => (
+          <div
+            key={product.id}
+            style={{
+              width: "300px",
+              backgroundColor: "grey", // Black card background
+              border: "1px solid #ddd",
+              borderRadius: "10px",
+              overflow: "hidden",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+              textAlign: "center",
+              transition: "0.3s ease", // Smooth transition for hover effect
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.border = "2px solid #007bff"; // Blue border on hover
+              e.currentTarget.style.borderRadius = "15px"; // Increase border radius on hover
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.border = "1px solid #ddd"; // Reset border
+              e.currentTarget.style.borderRadius = "10px"; // Reset border radius
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "200px",
+                overflow: "hidden",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+            <div style={{ padding: "10px" }}>
+              <h3
+                style={{
+                  margin: "10px 0",
+                  fontSize: "18px",
+                  color: "#000", // Black product name
+                }}
+              >
+                {product.name}
+              </h3>
+              <button
+                onClick={() => router.push(`/viewer?modelUrl=${product.modelUrl}`)} // Navigate to viewer
+                style={{
+                  backgroundColor: "#007bff",
+                  color: "#fff",
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                }}
+              >
+                View in 3D
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
-
