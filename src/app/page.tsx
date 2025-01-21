@@ -73,7 +73,7 @@ export default function ProductList() {
             <div
               style={{
                 width: "100%",
-                height: "300px",
+                height: "301px",
                 overflow: "hidden",
                 display: "flex",
                 alignItems: "center",
