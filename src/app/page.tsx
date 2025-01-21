@@ -43,7 +43,7 @@ export default function ProductList() {
       <div
         style={{
           display: "flex",
-          gap: "20px",
+          gap: "50px",
           flexWrap: "wrap",
           justifyContent: "center",
         }}
@@ -53,7 +53,7 @@ export default function ProductList() {
             key={product.id}
             style={{
               width: "300px",
-              backgroundColor: "grey", // Black card background
+              backgroundColor: "white", // Black card background
               border: "1px solid #ddd",
               borderRadius: "10px",
               overflow: "hidden",
@@ -62,7 +62,7 @@ export default function ProductList() {
               transition: "0.3s ease", // Smooth transition for hover effect
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.border = "2px solid #007bff"; // Blue border on hover
+              e.currentTarget.style.border = "3px solid #007bff"; // Blue border on hover
               e.currentTarget.style.borderRadius = "15px"; // Increase border radius on hover
             }}
             onMouseOut={(e) => {
@@ -73,7 +73,7 @@ export default function ProductList() {
             <div
               style={{
                 width: "100%",
-                height: "200px",
+                height: "300px",
                 overflow: "hidden",
                 display: "flex",
                 alignItems: "center",
@@ -84,8 +84,8 @@ export default function ProductList() {
                 src={product.image}
                 alt={product.name}
                 style={{
-                  width: "100%",
-                  height: "100%",
+                  width: "70%",
+                  height: "70%",
                   objectFit: "cover",
                 }}
               />
@@ -93,8 +93,8 @@ export default function ProductList() {
             <div style={{ padding: "10px" }}>
               <h3
                 style={{
-                  margin: "10px 0",
-                  fontSize: "18px",
+                  margin: "20px 20px ",
+                  fontSize: "24px",
                   color: "#000", // Black product name
                 }}
               >
