@@ -11,7 +11,7 @@ function RotatingModel({ modelUrl }: { modelUrl: string }) {
   // Use the useFrame hook to rotate the model smoothly
   useFrame(() => {
     if (modelRef.current) {
-      modelRef.current.rotation.y += 0.007; // Adjust the value for speed
+      modelRef.current.rotation.y += 0.003; // Adjust the value for speed
     }
   });
 
