@@ -50,10 +50,11 @@ export default function Viewer() {
 
   <color attach="background" args={["#f5f5f5"]} />
   <Suspense fallback={null}></Suspense>
-  <Stage intensity={0}  adjustCamera={1.2} preset={"rembrandt"} environment={null}>
+  <Stage intensity={0}  adjustCamera={1.2} preset={"rembrandt"} environment={"city"} >
     {/* Render the model if modelUrl is set */}
     {modelUrl && <Gltf src={modelUrl} />}
-    <Environment files="/models/env1.hdr" environmentIntensity={2.5}  />
+    <Environment files="/models/env1.hdr" environmentIntensity={1.5} environmentRotation={[1,0,0]}   />
+    
   </Stage>
 
   {/* OrbitControls with zoom limits */}
