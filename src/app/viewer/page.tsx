@@ -50,11 +50,12 @@ export default function Viewer() {
 
   <color attach="background" args={["#f5f5f5"]} />
   <Suspense fallback={null}></Suspense>
-  <Stage intensity={0}  adjustCamera={1.2} preset={"rembrandt"} environment={"city"} >
+  
+  <Stage intensity={0.3}   adjustCamera={1.2} preset={"soft"} environment={"city"}  >
     {/* Render the model if modelUrl is set */}
     {modelUrl && <Gltf src={modelUrl} />}
-    <Environment files="/models/env1.hdr" environmentIntensity={1.5} environmentRotation={[1,0,0]}   />
-    
+    <Environment files="/models/env2.hdr" environmentIntensity={3} environmentRotation={[0,90,0]}   blur={1}   />
+  
   </Stage>
 
   {/* OrbitControls with zoom limits */}
@@ -64,8 +65,8 @@ export default function Viewer() {
     enableZoom={true}
     enablePan={true}
     enableRotate={true}
-    minDistance={0.30} // Minimum distance for zoom-in
-    maxDistance={0.4} // Maximum distance for zoom-out
+    minDistance={0.17} // Minimum distance for zoom-in
+    maxDistance={0.60} // Maximum distance for zoom-out
   />
 </Canvas>
     </div>
