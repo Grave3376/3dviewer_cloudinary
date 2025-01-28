@@ -11,13 +11,16 @@
   "dependencies": {
     "@react-three/drei": "^9.121.1",
     "@react-three/fiber": "^8.17.12",
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/three": "^0.152.1",
     "firebase": "^11.2.0",
     "next": "14.2.23",
     "next-cloudinary": "^6.16.0",
+    "postcss": "^8.5.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-test-renderer": "^18.2.0"
+    "react-test-renderer": "^18.2.0",
+    "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
