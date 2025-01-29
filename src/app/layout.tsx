@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
+import {Plus_Jakarta_Sans} from 'next/font/google'
 import localFont from "next/font/local";
+import next from "next";
 // import "./globals.css";
+
+
+const Plus_Jakarta_Sans_init = Plus_Jakarta_Sans ({
+subsets:['latin'],
+weight:['200','300','400','500','600','700','800'],
+variable: '--font-plusJakartaSans',
+})
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={Plus_Jakarta_Sans_init.variable}>
         {children}
       </body>
     </html>
