@@ -7,7 +7,7 @@ const products = [
     name: "iPhone 15 Pro Max",
     image: "./models/15promax.JPEG",
     modelUrl:
-      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1738245482/vtmp086htkfx16tzdxy6.glb",
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1738246907/vtmp086htkfx16tzdxy6.glb",
   },
   {
     id: 2,
