@@ -136,7 +136,7 @@ function RotatingModel({ modelUrl, isPaused }: { modelUrl: string; isPaused: boo
 export default function Viewer() {
   const [modelUrl, setModelUrl] = useState<string | null>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [selectedGrade, setSelectedGrade] = useState<string | null>(null);
+  const [selectedGrade, setSelectedGrade] = useState<string | null>("C Grade");
   const router = useRouter();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
