@@ -238,7 +238,7 @@ export default function Viewer() {
             border: "1px solid #E9EAEB",
           }}
         >
-          <Canvas gl={{ antialias: true }} dpr={[0.5, 3.5]} camera={{ position: [4, -1, 8], fov: 35 }}>
+          <Canvas gl={{ antialias: true }} dpr={[0.3, 3.5]} camera={{ position: [4, -1, 8], fov: 35 }}>
             <color attach="background" args={["#f5f5f5"]} />
             <Suspense
               fallback={
