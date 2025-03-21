@@ -14,14 +14,14 @@ const products = [
     name: "Airpods",
     image: "./models/airpods.JPG",
     modelUrl:
-      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1739362647/v3_qdyb3p.glb",
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1742556290/iPad_Mini_Starlight_pqqpkb.glb",
   },
   {
     id: 3,
     name: "Macbook",
     image: "./models/macbook.JPG",
     modelUrl:
-      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1739249983/vtmp086htkfx16tzdxy6.glb",
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1742556290/iPad_Mini_Starlight_pqqpkb.glb",
   },
 ];
 
