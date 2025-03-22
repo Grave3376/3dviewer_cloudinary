@@ -266,15 +266,15 @@ export default function Viewer() {
             >
               
 
-              <Stage   intensity={0} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
+              <Stage   intensity={0} adjustCamera={1.2} preset="rembrandt" environment={null} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
-                <ambientLight  intensity={1} />  // {/*30 for iphone*/}
-                {/* <directionalLight position={[0, 1, 0]} intensity={2} />  Top light */}
-{/* <directionalLight position={[-1, 0, 0]} intensity={20} /> Left light */}
-{/* <directionalLight position={[1, 0, 0]} intensity={5} />  Right light */}
-{/* <directionalLight position={[1, -1, 0]} intensity={5} />  //  bottom side  //   30 for iphone */}
-{/* <directionalLight position={[0, 0, 1]} intensity={0} />    Back light */}
-{/* <ambientLight position={[0, 0, -1]} intensity={20} />  Front light */}
+                <ambientLight  intensity={0} />  // {/*30 for iphone*/}
+                <directionalLight position={[0, 1, 0]} intensity={2} />  Top light
+<directionalLight position={[-1, 0, 0]} intensity={0.5} /> Left light
+<directionalLight position={[1, 0, 0]} intensity={0.5} />  Right light
+<directionalLight position={[1, -1, 0]} intensity={0.5} />  //  bottom side  //   30 for iphone
+<directionalLight position={[0, 0, 1]} intensity={0.5} />    Back light
+<ambientLight position={[0, 0, -1]} intensity={0.5} />  Front light
 
                 {/* <Environment files="/models/env1.hdr" environmentIntensity=
                 {3} environmentRotation={[1, 0, 0]} blur={1}  /> */}
