@@ -205,7 +205,7 @@ export default function Viewer() {
         }}
       >
         <span style={{ fontSize: "20px", fontWeight: "bold", color: "black" }}>
-          iPhone 15 PRO MAX
+          iPad Pro
         </span>
 
         {/* Close Button */}
@@ -274,7 +274,7 @@ export default function Viewer() {
 <directionalLight position={[1, 0, 0]} intensity={5} />  Right light
 <directionalLight position={[1, -1, 0]} intensity={10} />  //  bottom side  //   30 for iphone
 <directionalLight position={[0, 0, 1]} intensity={5} />    Back light
-<ambientLight position={[0, 0, -1]} intensity={0.5} />  Front light
+<ambientLight position={[0, 0, -1]} intensity={0.25} />  Front light
 
                 {/* <Environment files="/models/env1.hdr" environmentIntensity=
                 {3} environmentRotation={[1, 0, 0]} blur={1}  /> */}
@@ -286,7 +286,7 @@ export default function Viewer() {
               enableZoom
               enablePan
               enableRotate
-              minDistance={0.17}
+              minDistance={0.25}
               maxDistance={0.6}
               onStart={handleControlStart}
               onEnd={handleControlEnd}
