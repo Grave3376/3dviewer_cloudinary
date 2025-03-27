@@ -4,10 +4,10 @@ import { useRouter } from "next/navigation";
 const products = [
   {
     id: 1,
-    name: "iPhone 15 Pro Max",
+    name: "iPad Pro 11",
     image: "./models/15promax.JPEG",
     modelUrl:
-      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1743114586/iPad_Mini_Starlight_pqqpkb.glb",
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1743114904/iPad_Mini_Starlight_pqqpkb.glb",
   },
   {
     id: 2,
