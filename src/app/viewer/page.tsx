@@ -266,11 +266,11 @@ export default function Viewer() {
             >
               
 
-              <Stage   intensity={0.3} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
+              <Stage   intensity={0.4} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
-                <ambientLight  intensity={0} />  // {/*30 for iphone*/}
+                <ambientLight  intensity={2} />  // {/*30 for iphone*/}
                 <directionalLight position={[0, 1, 0]} intensity={2} />  Top light
-<directionalLight position={[-1, 0, 0]} intensity={0} /> Left light
+<directionalLight position={[-1, 0, 0]} intensity={5} /> Left light
 <directionalLight position={[1, 0, 0]} intensity={0} />  Right light
 <directionalLight position={[1, -1, 0]} intensity={10} />  //  bottom side  //   30 for iphone
 <directionalLight position={[0, 0, 1]} intensity={1} />    Back light
