@@ -266,7 +266,7 @@ export default function Viewer() {
             >
               
 
-              <Stage   intensity={1.8} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
+              <Stage   intensity={1.4} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
                 <ambientLight  intensity={4} />  // {/*30 for iphone*/}
                 <directionalLight position={[0, 1, 0]} intensity={2} />  Top light
