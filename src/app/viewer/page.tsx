@@ -254,7 +254,7 @@ export default function Viewer() {
                     }
                     .spinner {
                       width: 40px;
-                      height: 40px;
+                      height: 40px;s
                       border: 4px solid #f3f3f3;
                       border-top: 4px solid #3498db;
                       border-radius: 50%;
@@ -266,9 +266,9 @@ export default function Viewer() {
             >
               
 
-              <Stage   intensity={0.4} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
+              <Stage   intensity={1.8} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
-                <ambientLight  intensity={2} />  // {/*30 for iphone*/}
+                <ambientLight  intensity={4} />  // {/*30 for iphone*/}
                 <directionalLight position={[0, 1, 0]} intensity={2} />  Top light
 <directionalLight position={[-1, 0, 0]} intensity={5} /> Left light
 <directionalLight position={[1, 0, 0]} intensity={0} />  Right light
