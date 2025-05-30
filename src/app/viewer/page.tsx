@@ -270,7 +270,7 @@ export default function Viewer() {
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
                 <ambientLight  intensity={4} />  // {/*30 for iphone*/}
                 <directionalLight position={[0, 1, 0]} intensity={2} />  Top light
-<directionalLight position={[-1, 0, 0]} intensity={5} /> Left light
+<directionalLight position={[-1, 0, 0]} intensity={10} /> Left light
 <directionalLight position={[1, 0, 0]} intensity={0} />  Right light
 <directionalLight position={[1, -1, 0]} intensity={20} />  //  bottom side  //   30 for iphone
 <directionalLight position={[0, 0, 1]} intensity={1} />    Back light

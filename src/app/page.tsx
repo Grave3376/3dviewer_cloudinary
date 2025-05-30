@@ -4,24 +4,24 @@ import { useRouter } from "next/navigation";
 const products = [
   {
     id: 1,
-    name: "iPad Pro 11",
-    image: "./models/15promax.JPEG",
+    name: "MacBook Grade A",
+    image: "./models/macbook.jpg",
     modelUrl:
-      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1743622228/iPad_Mini_Starlight_pqqpkb.glb",
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1748588742/A-Grade-v1.2_ivs3jn.glb",
   },
   {
     id: 2,
-    name: "Airpods",
-    image: "./models/airpods.JPG",
+    name: "MacBook Grade B",
+    image: "./models/macbook.jpg",
     modelUrl:
-      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1742556290/iPad_Mini_Starlight_pqqpkb.glb",
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1748588820/B-Grade-v4_hmi06y.glb",
   },
   {
     id: 3,
-    name: "Macbook",
-    image: "./models/macbook.JPG",
+    name: "MacBook Grade C",
+    image: "./models/macbook.jpg",
     modelUrl:
-      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1742556290/iPad_Mini_Starlight_pqqpkb.glb",
+      "https://res.cloudinary.com/dxm0jq0xk/image/upload/v1748588883/C-Grade-v1.6_sbdga3.glb",
   },
 ];
 
