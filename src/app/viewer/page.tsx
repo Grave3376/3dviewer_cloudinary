@@ -266,18 +266,11 @@ export default function Viewer() {
             >
               
 
-              <Stage   intensity={0.2} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
+              <Stage   intensity={0.05} adjustCamera={1.2} preset="upfront" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
-                <ambientLight  intensity={4} />  // {/*30 for iphone*/}
-                <directionalLight position={[0, 1, 0]} intensity={2} />  Top light
-<directionalLight position={[-1, 0, 0]} intensity={25} /> Left light
-<directionalLight position={[1, 0, 0]} intensity={0} />  Right light
-<directionalLight position={[1, -1, 0]} intensity={20} />  //  bottom side  //   30 for iphone
-<directionalLight position={[0, 0, 1]} intensity={1} />    Back light
-<ambientLight position={[0, 0, -1]} intensity={0.5} />  Front light
+              
 
-                {/* <Environment files="/models/env1.hdr" environmentIntensity=
-                {3} environmentRotation={[1, 0, 0]} blur={1}  /> */}
+                
               </Stage>
             </Suspense>
             <OrbitControls
