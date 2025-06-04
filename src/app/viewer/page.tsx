@@ -266,7 +266,7 @@ export default function Viewer() {
             >
               
 
-              <Stage   intensity={0.05} adjustCamera={1.2} preset="upfront" environment={"city"} >
+              <Stage   intensity={0.05} adjustCamera={1.2} preset="rembrandt" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
               
 
