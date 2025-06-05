@@ -266,12 +266,14 @@ export default function Viewer() {
             >
               
 
-              <Stage   intensity={0.2} adjustCamera={1.2} preset="portrait" environment={"city"} >
+              <Stage   intensity={0.001} adjustCamera={1.2} preset="portrait" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
               
-<directionalLight position = {[1, -1, 0]} intensity = {3} /> // Backside
-<directionalLight position = {[0, 0, 1]} intensity = {1} />
-          <directionalLight position = {[0, 0, -1]} intensity = {1} />      
+<directionalLight position = {[1, -1, 0]} intensity = {2} /> // Backside
+<directionalLight position = {[0, 0, 1]} intensity = {1.4} /> // Bottom v2
+          <directionalLight position = {[0, 0, -1]} intensity = {1} />    // Front
+          <directionalLight position = {[1, 0, 0]} intensity = {1} />     // Right  
+          <directionalLight position = {[-1, 0, 0]} intensity = {1.2} />     // Left
               </Stage>
             </Suspense>
             <OrbitControls
