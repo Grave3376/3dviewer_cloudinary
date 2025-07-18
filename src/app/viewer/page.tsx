@@ -245,6 +245,7 @@ export default function Viewer() {
                 <Html center>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <div className="spinner"></div>
+                    
                     <p style={{ marginTop: "8px", color: "black", fontSize: "14px" }}>Loading Model...</p>
                   </div>
                   <style jsx>{`
@@ -261,16 +262,19 @@ export default function Viewer() {
                       animation: spin 2s linear infinite;
                     }
                   `}</style>
+                  
                 </Html>
+              
               }
             >
               
+              
 
-              <Stage   intensity={0.006} adjustCamera={1.2} preset="upfront" environment={"city"} >
+              <Stage   intensity={0.1} adjustCamera={1.5} preset="upfront" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
               
-<directionalLight position = {[1, -1, 0]} intensity = {2} /> // Backside
-<directionalLight position = {[0, 0, 1]} intensity = {1.4} /> // Bottom v2
+<directionalLight position = {[1, -1, 0]} intensity = {20} /> // Backside
+<directionalLight position = {[0, 0, 1]} intensity = {1} /> // Bottom v2
           <directionalLight position = {[0, 0, -1]} intensity = {0} />    // Front
           <directionalLight position = {[1, 0, 0]} intensity = {1} />     // Right  
           <directionalLight position = {[-1, 0, 0]} intensity = {1.2} />     // Left
@@ -287,6 +291,19 @@ export default function Viewer() {
               onStart={handleControlStart}
               onEnd={handleControlEnd}
             />
+            <Html fullscreen>
+    <div
+      style={{
+        position: "absolute",
+        bottom: "40px",
+        width: "100%",
+        textAlign: "center",
+        fontSize: "16px",
+        color: "black",
+      }}
+    >
+    </div>
+  </Html>
           </Canvas>
         </div>
 
