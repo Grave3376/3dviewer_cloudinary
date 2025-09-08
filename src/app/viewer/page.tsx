@@ -275,9 +275,10 @@ export default function Viewer() {
               
 <directionalLight position = {[1, -1, 0]} intensity = {3} /> // Backside
 <directionalLight position = {[0, -1, 0]} intensity = {1.5} /> // Bottom v2
+<directionalLight position = {[0, 1 , 0]} intensity = {0.25} /> // Top
           <directionalLight position = {[0, 0, -1]} intensity = {1.05} />    // Front
-          <directionalLight position = {[1, 0, 0]} intensity = {1.5} />     // Right 
-          <directionalLight position = {[-1, 0, 0]} intensity = {1.5} />     // Left
+          <directionalLight position = {[1, 0, 0]} intensity = {1.05} />     // Right 
+          <directionalLight position = {[-1, 0, 0]} intensity = {1.05} />     // Left
               </Stage>
             </Suspense>
             <OrbitControls
