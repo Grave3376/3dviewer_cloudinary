@@ -270,7 +270,7 @@ export default function Viewer() {
               
               
 
-              <Stage   intensity={0.003} adjustCamera={1.5} preset="rembrandt" environment={"city"} >
+              <Stage   intensity={2} adjustCamera={1.5} preset="rembrandt" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
               
 <directionalLight position = {[1, -1, 0]} intensity = {3} /> // Backside
