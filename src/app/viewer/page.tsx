@@ -178,6 +178,19 @@ export default function Viewer() {
 
   return (
     <div
+     style={{
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "#FFFFFF",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "24px",
+    overflow: "hidden",
+  }}
+    >
+    <div
       style={{
         width: "1312px",
         height: "604px",
@@ -392,6 +405,7 @@ export default function Viewer() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
