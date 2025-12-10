@@ -117,6 +117,7 @@ import { useRouter } from "next/navigation";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Stage, OrbitControls, Gltf, Environment, Html } from "@react-three/drei";
 import { CircleCheck, X } from "lucide-react";
+import { HemisphereLight } from "three";
 
 // Component for the rotating model
 function RotatingModel({ modelUrl, isPaused }: { modelUrl: string; isPaused: boolean }) {
@@ -283,15 +284,26 @@ export default function Viewer() {
               
               
 
-              <Stage   intensity={0.6} adjustCamera={1.5} preset="rembrandt" environment={"city"} >
+              <Stage   intensity={0.5} adjustCamera={3} preset="rembrandt" environment={"city"} >
                 {modelUrl && <RotatingModel modelUrl={modelUrl} isPaused={isPaused} />}
-              
-<directionalLight position = {[1, -1, 0]} intensity = {3} /> // Backside
-<directionalLight position = {[0, -1, 0]} intensity = {1.5} /> // Bottom v2
-<directionalLight position = {[0, 1 , 0]} intensity = {0.25} /> // Top
-          <directionalLight position = {[0, 0, -1]} intensity = {1.05} />    // Front
-          <directionalLight position = {[1, 0, 0]} intensity = {1.05} />     // Right 
-          <directionalLight position = {[-1, 0, 0]} intensity = {1.05} />     // Left
+              <directionalLight position = {[1, -1, 0]} intensity = {6} /> // Backside
+              <directionalLight position = {[0, -1, 0]} intensity = {1.5} /> // Bottom v2
+              <directionalLight position = {[0, 1 , 0]} intensity = {0.25} /> // Top
+              <directionalLight position = {[0, 0, -1]} intensity = {1.05} />    // Front
+              <directionalLight position = {[1, 0, 0]} intensity = {1.05} />     // Right 
+              <directionalLight position = {[0, 0, -1]} intensity = {1.05} />    // Front
+              <directionalLight position = {[1, 0, 0]} intensity = {1.05} />     // Right 
+              <directionalLight position = {[-1, 0, 0]} intensity = {1.05} />     // Left
+                
+                {/* <spotLight
+                  position={[0, 1, 0]}
+                  angle={5}/>
+                  <spotLight
+                  position={[0, -1, 0]}
+                  angle={5} />
+                  <spotLight
+                  position={[1, 0, 0]}
+                  angle={5} /> */}
               </Stage>
             </Suspense>
             <OrbitControls
